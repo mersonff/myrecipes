@@ -8,5 +8,7 @@ class Chef < ApplicationRecord
 						format: { with: VALID_EMAIL_REGEX },
 						uniqueness: {case_sensitive: false }
 
+	has_many :recipes
+
 
 end
