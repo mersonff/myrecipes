@@ -5,8 +5,8 @@ class RecipesTest < ActionDispatch::IntegrationTest
   def setup
   	@chef = Chef.create!(chefname: "Emerson", email: "emerson@example.com")
   	@recipe = Recipe.create(name: "vegetable sautee", description: "great vegetable sautee", chef: @chef)
-	@recipe2 = @chef.recipes.build(name: "chicken sautee", description: "great chicken sautee")
-	@recipe2.save
+    @recipe2 = @chef.recipes.build(name: "chicken sautee", description: "great chicken sautee")
+    @recipe2.save
   end	
 
   test "should get recipes index" do
@@ -27,6 +27,8 @@ class RecipesTest < ActionDispatch::IntegrationTest
     assert_match @recipe.name, response.body
     assert_match @recipe.description, response.body
     assert_match @chef.chefname, response.body
+    assert_select 'a[href=?]', edit_recipe_path(@recipe), text: "Edit this recipe"
+    assert_select 'a[href=?]', recipe_path(@recipe), text: "Delete this recipe"
   end
 
   test "create new valid recipe" do
