@@ -36,6 +36,9 @@ class RecipesController < ApplicationController
 	end
 
 	def show
+		@comment = Comment.new
+		@comments = @recipe.comments.paginate(page: params[:page], 
+                                                per_page: 5)
 	end
 
 	def destroy
