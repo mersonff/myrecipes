@@ -1,7 +1,12 @@
-$navbar-default-bg: #073B15;
-
 @import "bootstrap-sprockets";
+
+@import "bootswatch/journal/variables";
+
 @import "bootstrap";
+
+body { padding-top: 80px; }
+
+@import "bootswatch/journal/bootswatch";
 
 footer {
 	margin-top: 45px;
@@ -31,15 +36,9 @@ footer ul li {
 #logo{
 	float: left;
 	font-size: 1.7em;
-	color: #fff;
 	text-transform: uppercase;
 	letter-spacing: -1px;
 	font-weight: bold;
-}
-
-#logo:hover {
-	color: #fff;
-	text-decoration: none;
 }
 
 .jumbotron {
@@ -65,7 +64,6 @@ footer ul li {
 }
 
 .btn-xlarge {
-  background-color: #073B15;
 }
 
 .description {
@@ -73,11 +71,9 @@ footer ul li {
 }
 
 .well a {
-	color: #073B15;
 }
 
 .colormatch a {
-	color: #073B15;
 }
 
 .chef_info {
@@ -98,7 +94,6 @@ footer ul li {
 }
 
 .chef-title {
-	color: #073B15;
 	font-weight: bold;
 	font-size: 1.25em;
 }
@@ -106,5 +101,8 @@ footer ul li {
 .input_checkbox input {
   width: auto !important;
 }
-
+ 
+.badge a {
+	color: #fff;
+}
 
